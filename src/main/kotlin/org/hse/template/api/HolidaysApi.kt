@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam
 
 
 interface HolidaysApi {
-
     @Tag(name = "Получение списка праздников по стране и году")
     @ApiResponses(
         ApiResponse(
