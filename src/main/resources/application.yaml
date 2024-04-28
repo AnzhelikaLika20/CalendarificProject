@@ -4,6 +4,12 @@ spring:
     username: postgres-user
     password: postgres-password
     driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
   cloud:
     openfeign:

@@ -20,16 +20,20 @@ val springdocOpenApi: String by project
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
+    //implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 
 //  Можете выбрать JPA (не забудьте закомментировать зависимость jdbc выше)
-//	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("com.google.code.gson:gson:2.8.8")
+    implementation("com.fasterxml.jackson.core:jackson-databind")
 
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocOpenApi")
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+    implementation ("org.springframework.boot:spring-boot-starter-cache")
 
     implementation("org.liquibase:liquibase-core")
     runtimeOnly("org.postgresql:postgresql")

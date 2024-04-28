@@ -15,4 +15,16 @@ interface HolidayService {
     ): Response
 
     fun getHolidaysByType(@RequestParam type: String, @RequestParam year: Long): Response
+    fun getHolidaysByDateAndCountry(
+        @RequestParam day: Long,
+        @RequestParam month: Long,
+        @RequestParam year: Long,
+        @RequestParam country: String
+    ): Response
+
+    fun getHolidaysByTypeAndCountry(
+        @RequestParam type: String,
+        @RequestParam year: Long,
+        @RequestParam country: String
+    ): Response
 }

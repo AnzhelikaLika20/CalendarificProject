@@ -1,5 +1,7 @@
 package org.hse.template.client.rest.model
 
+import com.google.gson.Gson
+
 data class Root(
     val meta: Meta,
     val response: Response,
@@ -11,7 +13,11 @@ data class Meta(
 
 data class Response(
     val holidays: List<Holiday>,
-)
+) {
+    fun toJson(): String {
+        return Gson().toJson(this)
+    }
+}
 
 data class Holiday(
     val name: String,

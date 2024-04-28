@@ -50,4 +50,28 @@ interface HolidaysApi {
     )
     fun getHolidaysByType(@RequestParam type: String, @RequestParam year: Long): Response
 
+    @Tag(name = "Получение списка праздников по дате и стране")
+    @ApiResponses(
+        ApiResponse(
+            description = "Списка праздников по дате и стране",
+            responseCode = "200"
+        )
+    )
+    fun getHolidaysByDateAndCountry(
+        @RequestParam day: Long, @RequestParam month: Long, @RequestParam year: Long, @RequestParam country: String
+    ): Response
+
+    @Tag(name = "Получение списка праздников по типу и стране. Возможные значения: \"National holiday\", \"Orthodox\", \"Observance\", \"Muslim\", \"Season\", \"Weekend\"")
+    @ApiResponses(
+        ApiResponse(
+            description = "Списка праздников по типу и стране",
+            responseCode = "200"
+        )
+    )
+    fun getHolidaysByTypeAndCountry(
+        @RequestParam type: String,
+        @RequestParam year: Long,
+        @RequestParam country: String
+    ): Response
+
 }

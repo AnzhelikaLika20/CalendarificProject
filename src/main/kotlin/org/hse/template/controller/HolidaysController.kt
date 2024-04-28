@@ -38,4 +38,23 @@ class HolidaysController(
         return holidaysService.getHolidaysByType(type, year)
     }
 
+    @GetMapping("/byDateAndCountry")
+    override fun getHolidaysByDateAndCountry(
+        @RequestParam day: Long,
+        @RequestParam month: Long,
+        @RequestParam year: Long,
+        @RequestParam country: String
+    ): Response {
+        return holidaysService.getHolidaysByDateAndCountry(day, month, year, country)
+    }
+
+    @GetMapping("/byTypeAndCountry")
+    override fun getHolidaysByTypeAndCountry(
+        @RequestParam type: String,
+        @RequestParam year: Long,
+        @RequestParam country: String
+    ): Response {
+        return holidaysService.getHolidaysByTypeAndCountry(type, year, country)
+    }
+
 }
